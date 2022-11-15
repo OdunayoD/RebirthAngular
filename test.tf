@@ -1,4 +1,0 @@
-aws 
-error 
-
-test
