@@ -1,5 +1,19 @@
-<h2>{{hero.name | uppercase}} Details</h2>
+<h1>{{hero.name | uppercase}} Details</h1>
 <div><span>id: </span>{{hero.id}}</div>
-<div><span>name: </span>{{hero.name}}</div>
+<div>
+    <label for="name">Hero name: </label>
+    <input id="name" [(ngModel)]="hero.name" placeholder="name">
+</div>
 <div><span>favoriteColor: {{hero.favoriteColor}}</span></div>
 
+<h2>My Heroes</h2>
+<ul class="heroes">
+    <li *ngFor="let h of heroes">
+        <button type="button">
+            <span class="id">{{h.id}}</span>
+            <span class="name">{{h.name}}</span>
+            <span class="favoriteColor">{{h.favoriteColor}}</span>
+            <span class="favoriteFood">{{h.favoriteFood}}</span>
+        </button>
+   </li>
+</ul>
