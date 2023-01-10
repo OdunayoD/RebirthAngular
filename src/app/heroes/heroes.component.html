@@ -7,16 +7,11 @@
 <div><span>favoriteColor: {{hero.favoriteColor}}</span></div>
 <h2>My Heroes</h2>
 <ul class="heroes">
-    <li *ngFor="let h of heroes">
-        <button [class.selected]="hero === selectedHero"
-         (click)="onSelect(hero)">
-            <span class="badge">{{h.id}}</span>
-            <span class="name">{{h.name}}</span>
-            <span class="favoriteColor">{{h.favoriteColor}}</span>
-            <span class="favoriteFood">{{h.favoriteFood}}</span>
-        </button>
-   </li>
-</ul>
+    <li *ngFor="let hero of heroes">
+      <a routerLink="/detail/{{hero.id}}">
+        <span class="badge">{{hero.id}}</span> {{hero.name}}
+      </a>
+    </li>
+  </ul>
 
-<app-hero-detail [hero]="selectedHero"></app-hero-detail>
 
